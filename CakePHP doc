@@ -1,0 +1,59 @@
+<h2>Cake PHP</h2>
+
+<h3>Get cake PHP version</h3>
+
+Simple way : Just search for VERSION.txt file. Open It to check the version.
+
+Path for version.txt
+
+For cakephp 1.* : cake/VERSION.txt
+
+For cakephp 2.* : lib/Cake/ VERSION.txt
+
+For cakephp 3. & 4.* : vendor/cakephp/cakephp/ VERSION.txt
+
+Get cakePHP from github
+
+git clone -b 2.x git://github.com/cakephp/cakephp.git
+
+<h3>Make chages in below files</h3>
+
+1)	Change Security.salt and Security.cipherSeed key  in cakeDemo/lib/Cake/Console/Templates/skel/Config/core.php
+2)	cakeDemo/app/Config/database.php.default to cakeDemo/app/Config/database.php
+
+<h3>Adding cake to your system path</h3>
+
+export PATH=$PATH:/var/www/html/cakeDemo/lib/Cake/Console
+
+cd /var/www/html/cakeDemo
+cake bake
+
+OR
+
+If you are on a *nix system (linux, MacOSX) the following steps will let you add the cake executable to your system path.
+
+Locate where your CakePHP install, and cake executable are. For example /Users/mark/cakephp/lib/Cake/Console/cake
+
+Edit your .bashrc or .bash_profile file in your home directory, and add the following:
+
+export PATH="$PATH:/Users/mark/cakephp/lib/Cake/Console"
+Reload the bash configuration or open a new terminal, and cake should work anywhere.
+
+run command from project root directory
+
+nikhil@nikhil-pc:/var/www/html/cakeDemo$ cake hello hey_there vidya
+
+<h3>Shells</h3>
+Available Shells:
+
+ acl [CORE]                              i18n [CORE]
+ api [CORE]                              import [app]
+ bake [CORE]                             schema [CORE]
+ command_list [CORE]                     testsuite [CORE]
+ console [CORE]                          upgrade [CORE]
+
+To run a command, type 'cake shell_name [args]'
+To get help on a specific command, type 'cake shell_name help'
+
+<h3>Shells, Tasks & Console Tools</h3>
+https://book.cakephp.org/2/en/console-and-shells.html

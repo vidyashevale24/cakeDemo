@@ -80,20 +80,11 @@ class UsersController extends AppController {
 		$this->set('role', array('admin' => 'Admin', 'user' => 'User'));
 		$this->set('status', array('active' => 'Active', 'Inactive' => 'Inactive'));
 		if ($this->request->is('post')) {
-			/*echo "<pre>";
-			print_r($this->request->data);
-			die;*/
 			$this->User->create();
-			
-			//$post = $this->request->data;
-			//$post['User']['createdDate'] = date('Y:m:d H:m:s');
-
 			$this->request->data['User']['createdDate'] = date('Y:m:d H:m:s');
 			$this->request->data['User']['password'] 	= AuthComponent::password($this->request->data['User']['password']);
 
-			
 			if ($this->User->save($this->request->data)) {
-
 				$this->Flash->success(__('The user has been saved.'));
 				//$this->Session->setFlash(__('The user has been saved.'));
 				return $this->redirect(array('action' => 'index'));
